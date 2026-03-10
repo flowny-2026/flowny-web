@@ -1,0 +1,123 @@
+/* Menu móvel (overlay) - mobile first */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Garantir que o menu sempre tenha fundo escuro */
+.mobile-menu,
+.mobile-menu.active {
+    background-color: rgba(15, 23, 42, 0.98) !important;
+}
+
+.mobile-menu.active {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu-content {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem 3rem;
+}
+
+.close-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s ease;
+}
+.close-menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 0;
+}
+
+.mobile-nav-links a {
+    color: var(--color-white) !important;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    min-height: var(--touch-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: var(--radius-md);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-cta) !important;
+}
+
+@media (orientation: landscape) {
+    .mobile-menu-content {
+        padding: 4rem 1.5rem 2rem;
+    }
+    .mobile-nav-links {
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 450px) {
+    .mobile-menu-content {
+        padding: 3rem 1.5rem;
+        justify-content: flex-start;
+    }
+    .mobile-nav-links a {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Garantir que o menu sempre tenha contraste adequado em todas as resoluções */
+@media (max-width: 950px) {
+    .nav-menu,
+    .mobile-menu {
+        background-color: rgba(15, 23, 42, 0.98) !important;
+    }
+    
+    .nav-menu ul li a,
+    .mobile-nav-links a {
+        color: var(--color-white) !important;
+    }
+}

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flowny - Desenvolvimento de sites profissionais, responsivos e de alto impacto. Transformamos sua presença digital com soluções personalizadas.">
+    <meta name="keywords" content="desenvolvimento web, sites responsivos, design profissional, presença digital, SEO">
+    <meta name="language" content="pt-BR">
+    <title>Flowny - Desenvolvimento Web Profissional</title>
+   
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo-26.png" type="image/png">
+    <link rel="shortcut icon" href="img/logo-26.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/logo-26.png" type="image/png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/stack.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/privacy-glassmorphism.css">
+    <link rel="stylesheet" href="css/single-page.css">
+    <link rel="stylesheet" href="css/about-modern.css">
+    <link rel="stylesheet" href="css/footer-fix.css">
+    <!-- <link rel="stylesheet" href="css/footer.css"> REMOVIDO TEMPORARIAMENTE -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <header role="banner">
+        <figure class="logo">
+            <img src="img/logo-26.png" alt="Logo da empresa">
+        </figure>
+        <button class="hamburger-menu" aria-label="Menu" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav aria-label="Navegação principal" class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato" class="cta-button">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO HOME -->
+    <main role="main">
+        <section id="home" class="hero-section" aria-label="Página inicial">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-gradient"></div>
+                <div class="hero-waves">
+                    <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="rgba(0,255,255,0.04)" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,165.3C960,171,1056,149,1152,138.7C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                        <path fill="rgba(0,191,255,0.02)" d="M0,96L60,112C120,128,240,160,360,165.3C480,171,600,149,720,154.7C840,160,960,192,1080,197.3C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div class="hero-dots" aria-hidden="true"></div>
+                <div class="hero-lines" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero-inner">
+                <article class="hero-content">
+                    <h1 class="hero-title">Transformamos sua ideia em um <span class="hero-title-icon" aria-hidden="true"><svg width="28" height="22" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="23" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 16h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 16v1.5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V16" stroke="currentColor" stroke-width="1.5"/></svg></span> <strong>SITE PROFISSIONAL</strong>, responsivo e de <strong>ALTO IMPACTO</strong></h1>
+                    <p class="hero-subtitle">Desenvolvemos websites modernos, rápidos e alinhados com o seu negócio para alcançar resultados excepcionais.</p>
+                    <a href="#contato" class="hero-cta">Solicite um orçamento</a>
+                </article>
+
+                <div class="hero-visual" aria-label="Mockup de site em notebook">
+                    <div class="hero-devices">
+                        <div class="device-phone">
+                            <img src="img/img.notebook-celular.png" alt="Site profissional em notebook" class="phone-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEÇÃO SOBRE NÓS -->
+    <section id="sobre" class="about-section-modern">
+        <div class="about-background">
+            <svg class="about-wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="rgba(255,255,255,0.03)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                <path fill="rgba(255,255,255,0.02)" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="about-container">
+            <header class="about-header">
+                <h2 class="about-title">Sobre Nós</h2>
+                <div class="about-glow-line"></div>
+                <p class="about-subtitle">Transformamos ideias em experiências digitais excepcionais</p>
+            </header>
+            
+            <div class="about-content">
+                <div class="about-cards">
+                    <article class="about-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3>Inovação Digital</h3>
+                        <p>Transformamos ideias em experiências digitais modernas e eficientes, sempre na vanguarda da tecnologia.</p>
+                    </article>
+                    
+                    <article class="about-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                                <path d="M9 14l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Desenvolvimento Focado</h3>
+                        <p>Criamos soluções web que impulsionam o crescimento, combinando criatividade e estratégia para resultados excepcionais.</p>
+                    </article>
+                    
+                    <article class="about-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 010 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Parceria Estratégica</h3>
+                        <p>Abordagem personalizada para cada projeto, sendo a parceira ideal para levar seu negócio ao próximo nível digital.</p>
+                    </article>
+                </div>
+                
+                <div class="about-mission">
+                    <div class="mission-content">
+                        <h3>Nossa Missão</h3>
+                        <p>Na Flowny, acreditamos que cada projeto é único e merece uma abordagem personalizada. Somos especialistas em desenvolvimento web, focados em criar soluções digitais que fazem a diferença no mercado.</p>
+                        <p>Combinamos tecnologia de ponta com design intuitivo para entregar websites que não apenas impressionam visualmente, mas também convertem visitantes em clientes.</p>
+                    </div>
+                </div>
+                
+                <div class="about-cta">
+                    <a href="https://wa.me/5516992915540" target="_blank" rel="noopener noreferrer" class="cta-button">
+                        <span>Vamos criar juntos?</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                            <path d="M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOSSA STACK -->
+    <section id="stack" class="stack-section">
+        <div class="stack-container">
+            <header class="stack-header">
+                <h2 class="stack-title">🚀 TECNOLOGIAS QUE USAMOS</h2>
+                <div class="stack-divider"></div>
+                <p class="stack-subtitle">Stack moderna que utilizamos para criar soluções robustas e escaláveis</p>
+            </header>
+            
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <div class="stack-icon">
+                        <img src="img/HTML.jpg" alt="HTML5" class="stack-img">
+                    </div>
+                    <h3>HTML5</h3>
+                    <p>Estrutura semântica e moderna</p>
+                </div>
+                
+                <div class="stack-item">
+                    <div class="stack-icon">
+                        <img src="img/CSS3 Badge with CSS text.jpg" alt="CSS3" class="stack-img">
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Design responsivo e animações</p>
+                </div>
+                
+                <div class="stack-item">
+                    <div class="stack-icon">
+                        <img src="img/JavaScript Badge with JS text.jpg" alt="JavaScript" class="stack-img">
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Interatividade e funcionalidades</p>
+                </div>
+                
+                <div class="stack-item">
+                    <div class="stack-icon">
+                        <img src="img/Python.jpg" alt="Python" class="stack-img">
+                    </div>
+                    <h3>Python</h3>
+                    <p>Backend robusto e escalável</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SERVIÇOS -->
+    <section id="servicos" class="services-section">
+        <div class="services-container">
+            <header class="services-header">
+                <h2 class="services-main-title">Serviços</h2>
+                <div class="divider"></div>
+                <p class="services-subtitle">Transformamos suas ideias em soluções digitais inovadoras e eficientes</p>
+            </header>
+            
+            <div class="services-grid">
+                <!-- Sites Institucionais -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="3" ry="3"/>
+                            <path d="M8 21h8"/>
+                            <path d="M12 17v4"/>
+                            <path d="M6 7h12"/>
+                            <path d="M6 10h8"/>
+                            <path d="M6 13h6"/>
+                            <circle cx="18" cy="10" r="2"/>
+                            <path d="M16 13l2-2 2 2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">Sites Institucionais</h3>
+                        <p class="service-description-modern">Desenvolvemos sites profissionais sob medida para apresentar sua empresa, produtos e serviços de forma clara, moderna e confiável.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Responsivo</span>
+                            <span class="feature-tag">SEO Otimizado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Landing Pages -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 7V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"/>
+                            <path d="M8 12l3 3 8-8"/>
+                            <circle cx="12" cy="12" r="1"/>
+                            <path d="M7 16l2-2 2 2"/>
+                            <path d="M15 8l2 2-2 2"/>
+                            <path d="M12 3v2"/>
+                            <path d="M12 19v2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">Landing Pages</h3>
+                        <p class="service-description-modern">Páginas focadas em conversão para campanhas específicas, produtos ou serviços, otimizadas para gerar leads e vendas.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Alta Conversão</span>
+                            <span class="feature-tag">Analytics</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SEO e Otimização -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                            <path d="M21 12h-6m-6 0H3"/>
+                            <path d="M18.364 5.636L15.536 8.464"/>
+                            <path d="M8.464 15.536L5.636 18.364"/>
+                            <path d="M18.364 18.364L15.536 15.536"/>
+                            <path d="M8.464 8.464L5.636 5.636"/>
+                            <circle cx="12" cy="12" r="8" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">SEO e Otimização</h3>
+                        <p class="service-description-modern">Otimização para mecanismos de busca, garantindo que seu site seja encontrado pelos seus clientes potenciais.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Google Ranking</span>
+                            <span class="feature-tag">Performance</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Manutenção de Sites -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M7 15l3-3 3 3"/>
+                            <circle cx="12" cy="9" r="1"/>
+                            <path d="M9 9h6"/>
+                            <path d="M8 12h8"/>
+                            <path d="M10 15h4"/>
+                            <path d="M12 2v2"/>
+                            <path d="M12 20v2"/>
+                            <path d="M2 12h2"/>
+                            <path d="M20 12h2"/>
+                            <circle cx="12" cy="12" r="9" stroke-dasharray="1 3"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">Manutenção de Sites</h3>
+                        <p class="service-description-modern">Serviços completos de manutenção e atualização para manter seu site sempre funcionando perfeitamente e atualizado.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Suporte 24/7</span>
+                            <span class="feature-tag">Atualizações</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Design Responsivo -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <rect x="8" y="21" width="8" height="1" rx="0.5"/>
+                            <path d="M12 17v4"/>
+                            <rect x="4" y="6" width="4" height="8" rx="1"/>
+                            <rect x="10" y="6" width="4" height="8" rx="1"/>
+                            <rect x="16" y="6" width="4" height="8" rx="1"/>
+                            <path d="M6 8v4M12 8v4M18 8v4"/>
+                            <circle cx="6" cy="10" r="0.5"/>
+                            <circle cx="12" cy="10" r="0.5"/>
+                            <circle cx="18" cy="10" r="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">Design Responsivo</h3>
+                        <p class="service-description-modern">Criamos sites que se adaptam perfeitamente a todos os dispositivos, garantindo uma experiência excelente em qualquer tela.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Mobile First</span>
+                            <span class="feature-tag">Cross-Platform</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UX/UI Design -->
+                <article class="service-card-modern">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 7.74 9 9 5.16-1.26 9-3.45 9-9V7l-10-5z"/>
+                            <path d="M8 12l2 2 4-4"/>
+                            <circle cx="12" cy="10" r="2"/>
+                            <path d="M9 15h6"/>
+                            <path d="M10 18h4"/>
+                            <circle cx="12" cy="12" r="8" stroke-dasharray="0.5 2"/>
+                            <path d="M16 8l2-2M6 8L4 6M16 16l2 2M6 16l-2 2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-modern">
+                        <h3 class="service-title-modern">UX/UI Design</h3>
+                        <p class="service-description-modern">Design centrado no usuário para criar interfaces intuitivas e experiências digitais que convertem visitantes em clientes.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">User-Centered</span>
+                            <span class="feature-tag">Conversão</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SEÇÃO PORTFÓLIO -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-background">
+            <header class="portfolio-header">
+                <h2 class="portfolio-title">Nosso Portfólio</h2>
+                <div class="divider"></div>
+                <p class="portfolio-subtitle">Conheça alguns dos nossos projetos recentes e veja como podemos transformar sua presença digital.</p>
+            </header>
+            
+            <div class="portfolio-grid">
+                <!-- Projeto 1 - Dr. Charles -->
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/dr.charles.png" alt="Dr. Charles - Site Médico">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Dr. Charles</h3>
+                        <p>Site médico profissional com agendamento online</p>
+                        <a href="https://flowny-2026.github.io/dr-charles-main/" target="_blank" class="view-project">Ver Projeto</a>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 - Android -->
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/android.png" alt="História dos Android">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>História Android</h3>
+                        <p>Timeline interativa da evolução Android</p>
+                        <a href="https://flowny-2026.github.io/historia-dos-android/" target="_blank" class="view-project">Ver Projeto</a>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 - Cordeu -->
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/cordeu.png" alt="Projeto Cordeu">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Cordeu</h3>
+                        <p>Plataforma educacional moderna</p>
+                        <a href="https://flowny-2026.github.io/projeto-cordeu/" target="_blank" class="view-project">Ver Projeto</a>
+                    </div>
+                </article>
+
+                <!-- Projeto 4 - Landing Page -->
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/r.c.png" alt="Landing Page">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>R.C Pinturas e decorações</h3>
+                        <p>Página de conversão otimizada</p>
+                        <a href="https://flowny-2026.github.io/RC/" target="_blank" class="view-project">Ver Projeto</a>
+                    </div>
+                </article>
+
+                <!-- Projeto 5 - Blog -->
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="img/BLOG.jpg" alt="Projeto Blog">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Blog Social</h3>
+                        <p>Plataforma de conteúdo e engajamento</p>
+                        <a href="https://flowly-tech-2025.github.io/projeto-social/" target="_blank" class="view-project">Ver Projeto</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO - DESIGN SAAS MODERNO -->
+    <section id="contato" class="contact-section-modern">
+        <div class="contact-background-tech">
+            <div class="contact-grid-pattern"></div>
+            <div class="contact-floating-elements">
+                <div class="floating-element element-1"></div>
+                <div class="floating-element element-2"></div>
+                <div class="floating-element element-3"></div>
+            </div>
+        </div>
+        
+        <div class="contact-container-modern">
+            <!-- Bloco Informativo (Esquerda) -->
+            <div class="contact-info-block" data-reveal="left">
+                <div class="contact-info-header">
+                    <h2 class="contact-main-title">Vamos Conversar?</h2>
+                    <p class="contact-main-subtitle">
+                        Transforme sua ideia em realidade digital. Nossa equipe está pronta para criar a solução perfeita para seu negócio.
+                    </p>
+                </div>
+                
+                <div class="contact-info-cards">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon whatsapp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>WhatsApp</h3>
+                            <p>(16) 99291-5540</p>
+                            <span class="contact-info-status">Online agora</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon email-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>E-mail</h3>
+                            <p>contato@flowny.com.br</p>
+                            <span class="contact-info-status">Resposta em 2h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon location-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h3>Localização</h3>
+                            <p>São Paulo, Brasil</p>
+                            <span class="contact-info-status">Atendimento remoto</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-social-proof">
+                    <div class="social-proof-item">
+                        <span class="proof-number">50+</span>
+                        <span class="proof-label">Projetos Entregues</span>
+                    </div>
+                    <div class="social-proof-item">
+                        <span class="proof-number">24h</span>
+                        <span class="proof-label">Tempo de Resposta</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulário (Direita) -->
+            <div class="contact-form-card" data-reveal="up">
+                <div class="form-card-header">
+                    <h3 class="form-title">Solicite seu Orçamento</h3>
+                    <p class="form-subtitle">Preencha os dados abaixo e entraremos em contato</p>
+                </div>
+                
+                <form id="contact-form-modern" class="contact-form-modern">
+                    <div class="form-group-modern">
+                        <input type="text" id="nome-modern" name="nome" class="form-input-modern" required>
+                        <label for="nome-modern" class="form-label-floating">Nome Completo</label>
+                        <div class="form-input-border"></div>
+                    </div>
+                    
+                    <div class="form-group-modern">
+                        <input type="email" id="email-modern" name="email" class="form-input-modern" required>
+                        <label for="email-modern" class="form-label-floating">E-mail</label>
+                        <div class="form-input-border"></div>
+                    </div>
+                    
+                    <div class="form-group-modern">
+                        <input type="tel" id="telefone-modern" name="telefone" class="form-input-modern">
+                        <label for="telefone-modern" class="form-label-floating">Telefone (opcional)</label>
+                        <div class="form-input-border"></div>
+                    </div>
+                    
+                    <div class="form-group-modern">
+                        <textarea id="mensagem-modern" name="mensagem" class="form-input-modern form-textarea" required></textarea>
+                        <label for="mensagem-modern" class="form-label-floating">Descreva seu projeto</label>
+                        <div class="form-input-border"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit-modern">
+                        <span class="btn-text">Enviar Mensagem</span>
+                        <div class="btn-spinner" style="display: none;">
+                            <svg class="spinner-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"/>
+                                <path d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                            <path d="M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA POLÍTICA DE PRIVACIDADE MODERNA -->
+    <div id="privacidade" class="privacy-page-modern">
+        <!-- Header -->
+        <header class="privacy-header">
+            <a href="#" class="privacy-back-btn" id="privacy-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"/>
+                    <path d="M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Voltar para Home</span>
+            </a>
+            <h1 class="privacy-page-title">Política de Privacidade</h1>
+            <button class="privacy-close-btn" aria-label="Fechar" id="privacy-close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18"/>
+                    <path d="M6 6l12 12"/>
+                </svg>
+            </button>
+            <!-- Barra de progresso de leitura -->
+            <div class="reading-progress">
+                <div class="reading-progress-bar"></div>
+            </div>
+        </header>
+
+        <!-- Layout de duas colunas -->
+        <div class="privacy-layout">
+            <!-- Sidebar de navegação -->
+            <nav class="privacy-sidebar">
+                <h3 class="privacy-nav-title">Sumário</h3>
+                <ul class="privacy-nav">
+                    <li class="privacy-nav-item">
+                        <a href="#informacoes" class="privacy-nav-link">Informações que Coletamos</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#finalidade" class="privacy-nav-link">Finalidade da Coleta</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#compartilhamento" class="privacy-nav-link">Compartilhamento de Dados</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#cookies" class="privacy-nav-link">Uso de Cookies</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#seguranca" class="privacy-nav-link">Armazenamento e Segurança</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#direitos" class="privacy-nav-link">Direitos do Usuário</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#alteracoes" class="privacy-nav-link">Alterações nesta Política</a>
+                    </li>
+                    <li class="privacy-nav-item">
+                        <a href="#contato-privacidade" class="privacy-nav-link">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Conteúdo principal -->
+            <main class="privacy-content">
+                <header>
+                    <div class="privacy-header-content">
+                        <h1 class="privacy-main-title">Política de Privacidade</h1>
+                        <p class="privacy-subtitle">
+                            Esta política descreve como coletamos, usamos e protegemos suas informações pessoais de forma transparente e em conformidade com a LGPD.
+                        </p>
+                    </div>
+                    <div class="privacy-header-info">
+                        <div class="privacy-stats-card">
+                            <span class="privacy-stats-number">8</span>
+                            <span class="privacy-stats-label">Seções</span>
+                        </div>
+                        <div class="privacy-last-updated">Última atualização: Janeiro de 2026</div>
+                    </div>
+                </header>
+
+                <section id="informacoes" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Informações que Coletamos
+                        <span class="privacy-section-badge">Dados Pessoais</span>
+                    </h2>
+                    
+                    <div class="privacy-section-content">
+                        <div class="privacy-intro">
+                            <p class="privacy-text">
+                                Coletamos informações pessoais de forma transparente e com seu consentimento para oferecer um atendimento mais eficiente e personalizado.
+                            </p>
+                        </div>
+                        
+                        <p class="privacy-text">
+                            Todas as informações são coletadas voluntariamente através de formulários de contato, solicitações de orçamento ou outros meios disponíveis em nosso site.
+                        </p>
+                        
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem 0;">Tipos de Dados Coletados:</h3>
+                        
+                        <ul class="privacy-list">
+                            <li class="privacy-list-item">
+                                <strong>Nome Completo</strong>
+                                Utilizado para personalização do atendimento e comunicação direta com você
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Endereço de E-mail</strong>
+                                Para comunicação, envio de propostas comerciais e suporte técnico
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Número de Telefone</strong>
+                                Para contato direto quando necessário e esclarecimento de dúvidas
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Informações do Projeto</strong>
+                                Detalhes sobre suas necessidades, preferências e especificações técnicas
+                            </li>
+                        </ul>
+                        
+                        <div class="privacy-divider"></div>
+                        
+                        <div class="privacy-important">
+                            <p class="privacy-text">
+                                <strong>Importante:</strong> Nunca coletamos dados sensíveis como informações bancárias, senhas ou documentos pessoais através de nosso site.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="finalidade" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m6-6h4a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2h-4m-6 0V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        Finalidade da Coleta de Dados
+                        <span class="privacy-section-badge">Uso</span>
+                    </h2>
+                    
+                    <div class="privacy-section-content">
+                        <div class="privacy-intro">
+                            <p class="privacy-text">
+                                Utilizamos seus dados pessoais exclusivamente para finalidades legítimas e transparentes, sempre respeitando seus direitos e privacidade.
+                            </p>
+                        </div>
+                        
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem 0;">Principais Finalidades:</h3>
+                        
+                        <ul class="privacy-list">
+                            <li class="privacy-list-item">
+                                <strong>Atendimento e Suporte</strong>
+                                Responder suas dúvidas, solicitações de orçamento e fornecer suporte técnico
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Comunicação Comercial</strong>
+                                Enviar informações sobre nossos serviços e novidades (apenas com seu consentimento)
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Melhoria da Experiência</strong>
+                                Aprimorar a navegação e personalizar sua experiência em nosso site
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Cumprimento Legal</strong>
+                                Atender obrigações legais e regulamentares quando aplicável
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Desenvolvimento de Serviços</strong>
+                                Desenvolver e aprimorar nossos serviços com base no seu feedback
+                            </li>
+                        </ul>
+                        
+                        <div class="privacy-divider"></div>
+                        
+                        <p class="privacy-text highlight">
+                            <strong>Compromisso:</strong> Seus dados nunca serão utilizados para finalidades diferentes das descritas acima sem o seu consentimento expresso.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="compartilhamento" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <polyline points="16,6 12,2 8,6"/>
+                            <line x1="12" y1="2" x2="12" y2="15"/>
+                        </svg>
+                        Compartilhamento de Dados
+                        <span class="privacy-section-badge">Terceiros</span>
+                    </h2>
+                    
+                    <div class="privacy-section-content">
+                        <div class="privacy-intro">
+                            <p class="privacy-text">
+                                <span class="privacy-highlight">Seus dados não são vendidos ou compartilhados</span> com terceiros para fins comerciais. Valorizamos sua privacidade e mantemos suas informações seguras.
+                            </p>
+                        </div>
+                        
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem 0;">Situações Específicas de Compartilhamento:</h3>
+                        
+                        <ul class="privacy-list">
+                            <li class="privacy-list-item">
+                                <strong>Prestadores de Serviços</strong>
+                                Serviços de hospedagem ou ferramentas de marketing, exclusivamente para execução das nossas atividades
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Exigências Legais</strong>
+                                Autoridades competentes, em caso de exigência por lei ou determinação judicial
+                            </li>
+                            <li class="privacy-list-item">
+                                <strong>Parceiros Confiáveis</strong>
+                                Parceiros que nos ajudam a operar nosso site, desde que concordem em manter essas informações confidenciais
+                            </li>
+                        </ul>
+                        
+                        <div class="privacy-divider"></div>
+                        
+                        <div class="privacy-important">
+                            <p class="privacy-text">
+                                <strong>Garantia:</strong> Todos os terceiros que têm acesso aos seus dados são obrigados contratualmente a manter o mesmo nível de proteção que aplicamos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cookies" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M21.17 8a3 3 0 0 0-6.15-2.15"/>
+                            <path d="M8 2.15A3 3 0 1 0 2.85 8"/>
+                        </svg>
+                        Uso de Cookies
+                        <span class="privacy-section-badge">Tecnologia</span>
+                    </h2>
+                    <p class="privacy-text">
+                        Nosso site utiliza cookies para melhorar a funcionalidade, personalizar conteúdo e entender o comportamento de navegação dos usuários. Os cookies nos ajudam a oferecer uma experiência mais personalizada.
+                    </p>
+                    <p class="privacy-text">Os cookies são pequenos arquivos de texto armazenados em seu dispositivo que nos ajudam a:</p>
+                    <ul class="privacy-list">
+                        <li class="privacy-list-item">Lembrar suas preferências e configurações de navegação</li>
+                        <li class="privacy-list-item">Analisar como você usa nosso site para melhorias contínuas</li>
+                        <li class="privacy-list-item">Melhorar nossos serviços e experiência do usuário</li>
+                        <li class="privacy-list-item">Fornecer conteúdo relevante e personalizado</li>
+                    </ul>
+                </section>
+
+                <section id="seguranca" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Armazenamento e Segurança
+                        <span class="privacy-section-badge">Proteção</span>
+                    </h2>
+                    <p class="privacy-text">
+                        Adotamos medidas de segurança técnicas e organizacionais rigorosas para proteger seus dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição.
+                    </p>
+                    <p class="privacy-text">Nossas medidas de segurança incluem:</p>
+                    <ul class="privacy-list">
+                        <li class="privacy-list-item">Criptografia de dados em trânsito e em repouso usando protocolos seguros</li>
+                        <li class="privacy-list-item">Controles de acesso rigorosos com autenticação multifator</li>
+                        <li class="privacy-list-item">Monitoramento contínuo de segurança e detecção de ameaças</li>
+                        <li class="privacy-list-item">Atualizações regulares de sistemas e software de segurança</li>
+                        <li class="privacy-list-item">Backup seguro e planos de recuperação de dados</li>
+                    </ul>
+                </section>
+
+                <section id="direitos" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            <path d="M13 12h3"/>
+                            <path d="M8 12H5"/>
+                        </svg>
+                        Direitos do Usuário
+                        <span class="privacy-section-badge">LGPD</span>
+                    </h2>
+                    <p class="privacy-text">
+                        De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem direitos fundamentais sobre seus dados pessoais. Respeitamos e facilitamos o exercício desses direitos.
+                    </p>
+                    <p class="privacy-text">Seus direitos incluem:</p>
+                    <ul class="privacy-list">
+                        <li class="privacy-list-item"><strong>Acesso:</strong> Solicitar informações sobre quais dados pessoais possuímos sobre você</li>
+                        <li class="privacy-list-item"><strong>Correção:</strong> Solicitar a correção de dados incompletos, inexatos ou desatualizados</li>
+                        <li class="privacy-list-item"><strong>Exclusão:</strong> Solicitar a exclusão de seus dados pessoais quando aplicável</li>
+                        <li class="privacy-list-item"><strong>Portabilidade:</strong> Solicitar a transferência de seus dados para outro fornecedor</li>
+                        <li class="privacy-list-item"><strong>Revogação:</strong> Revogar seu consentimento a qualquer momento</li>
+                        <li class="privacy-list-item"><strong>Oposição:</strong> Opor-se ao tratamento de seus dados em certas situações</li>
+                    </ul>
+                </section>
+
+                <section id="alteracoes" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                        Alterações nesta Política
+                        <span class="privacy-section-badge">Atualizações</span>
+                    </h2>
+                    <p class="privacy-text">
+                        Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas, serviços ou por outros motivos operacionais, legais ou regulamentares.
+                    </p>
+                    <p class="privacy-text">
+                        Recomendamos que você revise esta política regularmente. Quaisquer alterações significativas serão comunicadas através de nosso site, por e-mail ou outros meios apropriados, com antecedência adequada.
+                    </p>
+                </section>
+
+                <section id="contato-privacidade" class="privacy-section">
+                    <h2 class="privacy-section-title">
+                        <svg class="privacy-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Contato
+                        <span class="privacy-section-badge">Suporte</span>
+                    </h2>
+                    <p class="privacy-text">
+                        Se você tiver dúvidas sobre nossa Política de Privacidade, quiser exercer seus direitos ou precisar de esclarecimentos sobre o tratamento de seus dados, entre em contato conosco:
+                    </p>
+                    
+                    <div class="privacy-contact-card">
+                        <h3 class="privacy-contact-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            Informações de Contato
+                        </h3>
+                        <div class="privacy-contact-info">
+                            <div class="privacy-contact-item">
+                                <strong>E-mail:</strong> contato@flowny.com.br
+                            </div>
+                            <div class="privacy-contact-item">
+                                <strong>Telefone:</strong> (16) 99291-5540
+                            </div>
+                            <div class="privacy-contact-item">
+                                <strong>Horário:</strong> Segunda a Sexta, 9h às 18h
+                            </div>
+                            <div class="privacy-contact-item">
+                                <strong>Resposta:</strong> Até 48 horas úteis
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Ícones de redes sociais flutuantes -->
+    <div class="social-float" aria-label="Redes sociais">
+        <a href="https://wa.me/5516992915540" target="_blank" rel="noopener noreferrer" class="social-float-item social-whatsapp" aria-label="WhatsApp">
+            <img src="img/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/flowly_sites?igsh=ZjFkZXNkNTR3NzB3&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-float-item social-instagram" aria-label="Instagram">
+            <img src="img/instagram-removebg-preview.png" alt="Instagram">
+        </a>
+    </div>
+
+    <footer>
+        <section class="footer-left">
+            <p><small>Flowny © Copyright 2025</small></p>
+        </section>
+        <section class="footer-right">
+            <nav aria-label="Links do rodapé">
+                <a href="#" id="privacy-link"><strong>Política de Privacidade</strong></a>
+            </nav>
+        </section>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/navigation-active.js"></script>
+    <script src="js/single-page.js"></script>
+    <script src="js/contato.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/privacy-scroll.js"></script>
+    <script src="js/privacy-modern.js"></script>
+    <script src="js/header-scroll.js"></script>
+
+</body>
+</html>

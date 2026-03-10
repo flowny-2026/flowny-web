@@ -1,0 +1,252 @@
+/* ===== VARIÁVEIS (PALETA E TEMA) ===== */
+/* 
+ * Este arquivo contém configurações globais do projeto:
+ * - Variáveis CSS (cores, fontes, espaçamentos)
+ * - Reset e base styles
+ * - Layout do body (padding-top para header fixo)
+ * - Scroll behavior e navegação entre seções
+ * - Estilos de acessibilidade
+ */
+:root {
+    --color-primary: #2563EB;
+    --color-primary-dark: #1E3A8A;
+    --color-accent: #6366F1;
+    --color-bg: #F8FAFC;
+    --color-text-muted: #4e6079;
+    --color-text: #0F172A;
+    --color-white: #ffffff;
+    --color-cta: #F59E0B;
+    --color-cta-hover: #D97706;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --touch-min: 44px; /* Área mínima de toque (acessibilidade) */
+}
+
+/* ===== RESET E BASE (MOBILE-FIRST) ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px; /* Base para rem */
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-primary-dark);
+    background-image: url('../img/fundo-novo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding-top: 70px; /* Igual à altura mínima do header */
+    padding-bottom: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Reset para mobile - remover flexbox que pode estar causando problemas */
+@media (max-width: 767px) {
+    body {
+        display: block !important; /* Voltar ao display normal */
+    }
+    
+    /* Garantir que todas as seções sejam estáticas */
+    section {
+        position: static !important;
+        display: block !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        order: initial !important;
+    }
+    
+    main {
+        position: static !important;
+        display: block !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        order: initial !important;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 70px; /* Mantém a mesma altura do header */
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-attachment: fixed;
+        padding-top: 80px; /* Igual à altura do header no desktop */
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding-top: 90px; /* Igual à altura do header em telas grandes */
+    }
+}
+
+@media (min-width: 1400px) {
+    body {
+        padding-top: 95px; /* Igual à altura do header em telas extra grandes */
+    }
+}
+
+/* Melhorar contraste para acessibilidade */
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Botão fechar seção (estilo global) */
+.close-section-btn {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    min-height: var(--touch-min);
+    min-width: var(--touch-min);
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.close-section-btn:hover {
+    background: var(--color-primary-dark);
+}
+.close-section-btn:active {
+    transform: scale(0.98);
+}
+
+/* Melhorar foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Skip to content para acessibilidade */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100000;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+/* ===== SINGLE PAGE SCROLL STYLES ===== */
+/* Garantir que todas as seções sejam visíveis */
+section {
+    display: block !important;
+    scroll-margin-top: 70px; /* Compensar header fixo */
+    position: relative !important; /* Forçar posição relativa */
+    z-index: auto !important; /* Z-index automático */
+}
+
+/* Espaçamento entre seções para single page */
+#sobre,
+#servicos,
+#contato,
+#portfolio,
+#stack {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    position: static !important; /* Forçar posição estática */
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+@media (min-width: 768px) {
+    section {
+        scroll-margin-top: 70px;
+    }
+    
+    #sobre,
+    #servicos,
+    #contato,
+    #portfolio,
+    #stack {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        position: static !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    section {
+        scroll-margin-top: 80px;
+    }
+    
+    #sobre,
+    #servicos,
+    #contato,
+    #portfolio,
+    #stack {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        position: static !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        scroll-margin-top: 90px;
+    }
+}
+
+@media (min-width: 1400px) {
+    section {
+        scroll-margin-top: 95px;
+    }
+}
+
+/* Remover botão de fechar que não é mais necessário */
+.close-section-btn {
+    display: none !important;
+}

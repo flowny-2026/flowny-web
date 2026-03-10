@@ -1,0 +1,614 @@
+/* ===== SEÇÃO SOBRE NÓS MODERNA COM GLASSMORPHISM ESCURO ===== */
+
+.about-section-modern {
+    position: relative;
+    padding: var(--space-lg) var(--space-sm);
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    z-index: 10001; /* Acima do header */
+}
+
+/* Background escuro com luzes ambientes */
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 10%, rgba(37, 99, 235, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 40%),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    z-index: -3;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Efeito de luzes flutuantes */
+.about-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.06) 0%, transparent 25%),
+        radial-gradient(circle at 60% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 25%);
+    animation: ambient-lights 12s ease-in-out infinite alternate;
+    z-index: -2;
+}
+
+@keyframes ambient-lights {
+    0% { 
+        opacity: 0.6;
+        transform: scale(1) rotate(0deg);
+    }
+    100% { 
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+/* Grid tecnológico sutil */
+.about-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Ondas tecnológicas sutis */
+.about-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Container principal */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 10002; /* Acima de tudo */
+    position: relative;
+}
+
+/* Header da seção */
+.about-header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: var(--space-lg) var(--space-md);
+    position: relative;
+    overflow: hidden;
+    z-index: 10001; /* Acima do header */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    pointer-events: none;
+}
+
+.about-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.about-glow-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(99,102,241,0.6), rgba(255,255,255,0.8));
+    margin: 0 auto 1rem;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 
+        0 0 10px rgba(255,255,255,0.3),
+        0 2px 4px rgba(255,255,255,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.8),
+        inset 0 -1px 0 rgba(255,255,255,0.4);
+    transform: perspective(100px) rotateX(15deg);
+}
+
+.about-glow-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.1) 25%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0.1) 75%, 
+        transparent 100%);
+    border-radius: 3px;
+}
+
+.about-glow-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+    animation: aboutShimmer 2.5s ease-in-out infinite;
+    border-radius: 3px;
+}
+
+@keyframes aboutShimmer {
+    0% { 
+        left: -100%; 
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        left: 100%; 
+        opacity: 0;
+    }
+}
+
+.about-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    max-width: 450px;
+    margin: 0 auto;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid de cards com glassmorphism */
+.about-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: var(--space-md);
+    text-align: center;
+    color: var(--color-white);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 10001; /* Acima do header */
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.about-card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-sm);
+    background: rgba(99, 102, 241, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover .card-icon {
+    background: rgba(99, 102, 241, 0.25);
+    transform: scale(1.1);
+}
+
+.about-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-white);
+}
+
+.about-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Seção da missão */
+.about-mission {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    color: var(--color-white);
+}
+
+.mission-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mission-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+    opacity: 0.95;
+}
+
+.mission-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* CTA Button */
+.about-cta {
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-cta);
+    color: var(--color-white);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-cta);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover {
+    background: var(--color-cta-hover);
+    border-color: var(--color-cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .about-section-modern {
+        padding: var(--space-xl) var(--space-lg);
+    }
+    
+    .about-header {
+        padding: var(--space-lg) var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .about-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-subtitle {
+        font-size: 1.05rem;
+    }
+    
+    .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .about-wave {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-header {
+        padding: var(--space-lg) 2rem;
+        border-radius: 16px;
+    }
+    
+    .about-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .about-title {
+        font-size: 2.4rem;
+    }
+    
+    .about-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .about-mission {
+        padding: var(--space-xl) 3rem;
+    }
+    
+    .mission-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+/* Animações de entrada */
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-header {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.about-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealUp 0.6s ease-out forwards;
+}
+
+.about-card:nth-child(1) { 
+    animation-delay: 0s; 
+}
+
+.about-card:nth-child(2) { 
+    animation-delay: 0.2s; 
+}
+
+.about-card:nth-child(3) { 
+    animation-delay: 0.4s; 
+}
+
+.about-mission {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.about-cta {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .about-card,
+    .about-header,
+    .about-mission,
+    .about-cta {
+        animation: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .about-card:hover {
+        transform: none;
+    }
+    
+    .cta-button:hover {
+        transform: none;
+    }
+}
+
+/* Melhorar contraste em modo de alto contraste */
+@media (prefers-contrast: high) {
+    .about-card {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .about-mission {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+}
+/* Elementos de luz ambiente flutuantes */
+.about-section-modern::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: glow-pulse-1 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+.about-section-modern::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(35px);
+    animation: glow-pulse-2 10s ease-in-out infinite reverse;
+    z-index: -1;
+}
+
+@keyframes glow-pulse-1 {
+    0%, 100% { 
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes glow-pulse-2 {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Partículas de luz */
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 
+        15px 25px 0 rgba(99, 102, 241, 0.4),
+        -20px 40px 0 rgba(168, 85, 247, 0.3),
+        30px -15px 0 rgba(34, 197, 94, 0.4),
+        -15px -25px 0 rgba(255, 255, 255, 0.3);
+    animation: twinkle 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* Reflexos de vidro */
+.about-container::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    transform: rotate(-15deg);
+    animation: glass-reflection 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes glass-reflection {
+    0%, 100% { 
+        opacity: 0.2;
+        transform: rotate(-15deg) translateX(0);
+    }
+    50% { 
+        opacity: 0.5;
+        transform: rotate(-15deg) translateX(20px);
+    }
+}

@@ -1,0 +1,258 @@
+/* ===== SINGLE PAGE SCROLL STYLES ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* FORÇAR LAYOUT NORMAL PARA SINGLE PAGE */
+main {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    z-index: auto !important;
+}
+
+/* FORÇAR VISIBILIDADE DE TODAS AS SEÇÕES */
+section {
+    display: block !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: auto !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Espaçamento entre seções */
+#sobre,
+#servicos,
+#contato,
+#portfolio {
+    margin-top: 2rem;
+    padding: 3rem 1rem;
+    background: rgba(248, 250, 252, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+/* Scroll offset para compensar header fixo */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Garantir que o body permita scroll */
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+/* FOOTER DIVIDIDO EM DUAS PARTES COM CONTEÚDO CENTRALIZADO */
+footer {
+    background: #1e3a8a !important;
+    color: white !important;
+    padding: 12px 0 !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 1000 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    margin-top: 2rem !important;
+    width: 100% !important;
+    clear: both !important;
+}
+
+footer .footer-left {
+    grid-column: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    border-right: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+footer .footer-right {
+    grid-column: 2 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+}
+
+footer .footer-left p,
+footer .footer-right a {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-family: Arial, sans-serif !important;
+    text-align: center !important;
+}
+
+footer .footer-right a:hover {
+    text-decoration: underline !important;
+    opacity: 0.8 !important;
+}
+
+/* Mobile: uma coluna, sem divisória */
+@media (max-width: 767px) {
+    footer {
+        grid-template-columns: 1fr !important;
+        padding: 10px 0 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    footer .footer-left {
+        grid-column: 1 !important;
+        border-right: none !important;
+        padding: 8px 15px !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    footer .footer-right {
+        grid-column: 1 !important;
+        padding: 8px 15px !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    footer .footer-left p,
+    footer .footer-right a {
+        font-size: 13px !important;
+        display: block !important;
+        margin: 0.5rem 0 !important;
+    }
+}
+
+/* SEÇÃO DE POLÍTICA DE PRIVACIDADE OCULTA - VERSÃO ANTIGA (DESABILITADA) */
+#privacidade.privacy-section {
+    display: none !important;
+}
+
+/* Garantir que a nova versão moderna funcione */
+#privacidade.privacy-page-modern {
+    /* Estilos controlados por privacy-modern.css */
+}
+
+/* ÍCONES SOCIAIS MENORES E MELHOR POSICIONADOS */
+.social-float {
+    position: fixed !important;
+    right: 1rem !important;
+    bottom: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    z-index: 9999999 !important;
+}
+
+.social-float-item {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: white !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.social-float-item:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.social-float-item img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain !important;
+}
+
+/* Mobile: ícones ainda menores */
+@media (max-width: 480px) {
+    .social-float {
+        right: 0.75rem !important;
+        bottom: 1.5rem !important;
+        gap: 0.4rem !important;
+    }
+    
+    .social-float-item {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .social-float-item img {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
+
+/* FORÇAR VISIBILIDADE DO FOOTER EM MOBILE */
+@media (max-width: 480px) {
+    footer {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 1rem 0 !important;
+        padding: 15px 0 !important;
+        background: #1e3a8a !important;
+        color: white !important;
+        text-align: center !important;
+        clear: both !important;
+        z-index: 1000 !important;
+    }
+    
+    footer .footer-left,
+    footer .footer-right {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 5px 10px !important;
+        margin: 0 !important;
+    }
+    
+    footer .footer-left p,
+    footer .footer-right a {
+        display: block !important;
+        margin: 5px 0 !important;
+        font-size: 12px !important;
+        color: white !important;
+    }
+    
+    /* Garantir que a seção de contato não cubra o footer */
+    .contact-section-modern {
+        margin-bottom: 0 !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Garantir scroll completo */
+    html, body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-y: auto !important;
+        scroll-behavior: smooth !important;
+    }
+}

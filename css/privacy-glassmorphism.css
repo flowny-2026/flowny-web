@@ -1,0 +1,1265 @@
+/* ===== POLÍTICA DE PRIVACIDADE - DESIGN MODERNO ===== */
+
+/* Variáveis de Design Moderno */
+:root {
+    --p-blue: #2563EB;
+    --p-bg: #F8FAFC;
+    --p-text: #0F172A;
+    --p-muted: #64748B;
+    --p-border: rgba(226, 232, 240, 0.8);
+    --color-primary: #2563EB;
+    --color-accent: #3b82f6;
+}
+
+/* Efeito de suavidade na rolagem da página toda */
+html {
+    scroll-behavior: smooth;
+}
+
+.privacy-page-modern {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E3A8A;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.95) 100%);
+    color: var(--p-text);
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    z-index: 99999;
+    overflow-y: auto;
+}
+
+.privacy-page-modern.active {
+    display: block;
+}
+
+/* Header da página - Design Moderno e Tecnológico - FIXO */
+.privacy-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.98) 0%, 
+        rgba(59, 130, 246, 0.98) 50%, 
+        rgba(99, 102, 241, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 100001;
+    box-shadow: 
+        0 8px 32px rgba(37, 99, 235, 0.15),
+        0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    overflow: hidden;
+    /* Garantir que sempre fique fixo */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Efeitos visuais de fundo no header */
+.privacy-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Elementos decorativos tecnológicos */
+.privacy-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 100%);
+    pointer-events: none;
+}
+
+/* Barra de progresso de leitura integrada */
+.reading-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.reading-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Barra de progresso ultra-fina no topo */
+.reading-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0.9) 100%);
+    width: 0%;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.privacy-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-back-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.privacy-back-btn:hover::before {
+    left: 100%;
+}
+
+.privacy-back-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.privacy-back-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.privacy-back-btn:hover svg {
+    transform: translateX(-3px);
+}
+
+.privacy-page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.025em;
+    position: relative;
+}
+
+.privacy-page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        transparent 100%);
+}
+
+.privacy-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-close-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.privacy-close-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.privacy-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px) rotate(90deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.privacy-close-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Layout de duas colunas - Ajustado para header fixo */
+.privacy-layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    padding-top: 100px; /* Espaço para o header fixo */
+    padding-bottom: 2rem;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Sidebar com estilo Documentação Tech - Glassmorphism - Ajustado para header fixo */
+.privacy-sidebar {
+    position: sticky;
+    top: 100px; /* Posição abaixo do header fixo */
+    height: fit-content;
+    max-height: calc(100vh - 120px); /* Altura máxima considerando o header */
+    width: 280px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.privacy-nav-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--p-text);
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.privacy-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.privacy-nav-item {
+    margin: 0 0 0.25rem 0;
+}
+
+.privacy-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--p-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.privacy-nav-link:hover, 
+.privacy-nav-link.active {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--p-blue);
+    font-weight: 600;
+}
+
+/* Estilo do link ativo no menu lateral */
+.privacy-nav-link.active {
+    color: var(--color-primary) !important;
+    background-color: rgba(37, 99, 235, 0.08);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 12px; /* Compensa a borda para não mover o texto */
+    font-weight: 600;
+}
+
+/* Conteúdo principal */
+.privacy-content {
+    flex: 1;
+    padding: 0;
+    min-height: 100%;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+/* Header do conteúdo principal - Design Moderno */
+.privacy-content > header {
+    background: linear-gradient(135deg, 
+        rgba(15, 23, 42, 0.95) 0%, 
+        rgba(30, 41, 59, 0.95) 50%, 
+        rgba(51, 65, 85, 0.95) 100%);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Efeitos de fundo tecnológicos */
+.privacy-content > header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Padrão de grade tecnológica */
+.privacy-content > header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Container do conteúdo principal */
+.privacy-header-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Container da informação lateral */
+.privacy-header-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.privacy-main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, 
+        #ffffff 0%, 
+        #e2e8f0 50%, 
+        #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.privacy-subtitle {
+    font-size: 1.25rem;
+    color: rgba(226, 232, 240, 0.9);
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 500px;
+}
+
+/* Badge de última atualização moderno */
+.privacy-last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 99, 235, 0.15);
+    color: #60a5fa;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.privacy-last-updated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(37, 99, 235, 0.05) 100%);
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.privacy-last-updated:hover::before {
+    opacity: 1;
+}
+
+.privacy-last-updated:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+/* Ícone para o badge */
+.privacy-last-updated::after {
+    content: '🕒';
+    font-size: 1rem;
+    margin-right: 0.25rem;
+}
+
+/* Card de estatísticas/informações */
+.privacy-stats-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.privacy-stats-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.privacy-stats-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #60a5fa;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.privacy-stats-label {
+    font-size: 0.875rem;
+    color: rgba(226, 232, 240, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Responsividade do header */
+@media (max-width: 768px) {
+    .privacy-content > header {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .privacy-header-info {
+        align-items: center;
+    }
+    
+    .privacy-main-title {
+        font-size: 2.25rem;
+    }
+    
+    .privacy-subtitle {
+        font-size: 1.125rem;
+        max-width: none;
+    }
+    
+    .privacy-stats-card {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+/* Cards específicos ultra-compactos */
+#informacoes.privacy-section,
+#finalidade.privacy-section,
+#compartilhamento.privacy-section {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#informacoes .privacy-section-title,
+#finalidade .privacy-section-title,
+#compartilhamento .privacy-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+#informacoes .privacy-section-icon,
+#finalidade .privacy-section-icon,
+#compartilhamento .privacy-section-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#informacoes .privacy-section-badge,
+#finalidade .privacy-section-badge,
+#compartilhamento .privacy-section-badge {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    margin-left: 6px;
+}
+
+#informacoes .privacy-text,
+#finalidade .privacy-text,
+#compartilhamento .privacy-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.625rem;
+}
+
+#informacoes .privacy-section-content,
+#finalidade .privacy-section-content,
+#compartilhamento .privacy-section-content {
+    gap: 0.75rem;
+}
+
+#informacoes .privacy-intro,
+#finalidade .privacy-intro,
+#compartilhamento .privacy-intro {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+}
+
+#informacoes .privacy-list,
+#finalidade .privacy-list,
+#compartilhamento .privacy-list {
+    margin: 0.75rem 0;
+    gap: 0.375rem;
+}
+
+#informacoes .privacy-list-item,
+#finalidade .privacy-list-item,
+#compartilhamento .privacy-list-item {
+    padding: 0.5rem 0.875rem 0.5rem 1.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-radius: 6px;
+}
+
+#informacoes .privacy-list-item::before,
+#finalidade .privacy-list-item::before,
+#compartilhamento .privacy-list-item::before {
+    left: 0.625rem;
+    top: 0.8125rem;
+    width: 5px;
+    height: 5px;
+}
+
+#informacoes .privacy-list-item strong,
+#finalidade .privacy-list-item strong,
+#compartilhamento .privacy-list-item strong {
+    font-size: 0.85rem;
+    margin-bottom: 0.125rem;
+}
+
+#informacoes .privacy-divider,
+#finalidade .privacy-divider,
+#compartilhamento .privacy-divider {
+    margin: 0.75rem 0;
+}
+
+#informacoes .privacy-important,
+#finalidade .privacy-important,
+#compartilhamento .privacy-important {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border-radius: 6px;
+    gap: 0.375rem;
+}
+
+#informacoes .privacy-important::before,
+#finalidade .privacy-important::before,
+#compartilhamento .privacy-important::before {
+    font-size: 0.8rem;
+    margin-top: 0.125rem;
+}
+
+#informacoes h3,
+#finalidade h3,
+#compartilhamento h3 {
+    font-size: 1.125rem !important;
+    margin: 1rem 0 0.625rem 0 !important;
+}
+
+/* Responsividade para os cards específicos */
+@media (max-width: 768px) {
+    #informacoes.privacy-section,
+    #finalidade.privacy-section,
+    #compartilhamento.privacy-section {
+        padding: 0.875rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    
+    #informacoes .privacy-section-title,
+    #finalidade .privacy-section-title,
+    #compartilhamento .privacy-section-title {
+        font-size: 1.0625rem;
+        margin-bottom: 0.625rem;
+    }
+    
+    #informacoes .privacy-section-icon,
+    #finalidade .privacy-section-icon,
+    #compartilhamento .privacy-section-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+    
+    #informacoes .privacy-text,
+    #finalidade .privacy-text,
+    #compartilhamento .privacy-text {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    #informacoes .privacy-list-item,
+    #finalidade .privacy-list-item,
+    #compartilhamento .privacy-list-item {
+        padding: 0.375rem 0.75rem 0.375rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    #informacoes h3,
+    #finalidade h3,
+    #compartilhamento h3 {
+        font-size: 1rem !important;
+        margin: 0.75rem 0 0.5rem 0 !important;
+    }
+}
+.privacy-section {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.3);
+    box-shadow: 
+        0 6px 10px -3px rgba(0, 0, 0, 0.05),
+        0 2px 4px -2px rgba(0, 0, 0, 0.03),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    scroll-margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.privacy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        var(--color-primary) 0%, 
+        var(--color-accent) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.privacy-section:hover::before {
+    opacity: 1;
+}
+
+.privacy-section:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 12px 16px -5px rgba(0, 0, 0, 0.08),
+        0 6px 6px -5px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.privacy-section-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--p-text);
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+    position: relative;
+}
+
+.privacy-section-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    margin-right: 10px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    padding: 3px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.privacy-section:hover .privacy-section-icon {
+    background: rgba(37, 99, 235, 0.15);
+    transform: scale(1.05);
+}
+
+.privacy-section-badge {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.15) 0%, 
+        rgba(59, 130, 246, 0.1) 100%);
+    color: var(--color-primary);
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.privacy-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--p-text);
+    margin: 0 0 0.75rem 0;
+    opacity: 0.95;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.privacy-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Parágrafos de destaque */
+.privacy-text.highlight {
+    background: rgba(37, 99, 235, 0.05);
+    padding: 0.875rem;
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 8px 8px 0;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.privacy-list {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.privacy-list-item {
+    position: relative;
+    padding: 0.625rem 1rem 0.625rem 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--p-text);
+    opacity: 0.95;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.privacy-list-item::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 0.9375rem;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, 
+        var(--color-primary) 0%, 
+        var(--color-accent) 100%);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+.privacy-list-item:hover {
+    opacity: 1;
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.privacy-list-item strong {
+    color: var(--color-primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.125rem;
+    font-size: 0.9rem;
+}
+
+/* Seções com melhor organização */
+.privacy-section-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.privacy-intro {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.08) 0%, 
+        rgba(59, 130, 246, 0.05) 100%);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    margin-bottom: 1rem;
+}
+
+.privacy-intro .privacy-text {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* Divisores visuais */
+.privacy-divider {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(226, 232, 240, 0.3) 50%, 
+        transparent 100%);
+    margin: 1rem 0;
+}
+
+/* Melhorar destaque de informações importantes */
+.privacy-important {
+    background: linear-gradient(135deg, 
+        rgba(245, 158, 11, 0.1) 0%, 
+        rgba(251, 191, 36, 0.05) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 0.875rem;
+    margin: 1rem 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.privacy-important::before {
+    content: '⚠️';
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.privacy-important .privacy-text {
+    margin: 0;
+    color: #92400e;
+    font-weight: 500;
+    flex: 1;
+}
+
+.privacy-highlight {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.15) 0%, 
+        rgba(59, 130, 246, 0.1) 100%);
+    color: var(--color-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Card de Contato Especial - Design Ultra-Compacto */
+.privacy-contact-card {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.05) 0%, 
+        rgba(59, 130, 246, 0.03) 50%, 
+        rgba(99, 102, 241, 0.05) 100%);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, 
+        var(--color-primary) 0%, 
+        var(--color-accent) 100%) 1;
+    padding: 1.25rem;
+    border-radius: 16px;
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 
+        0 12px 16px -5px rgba(37, 99, 235, 0.1),
+        0 6px 6px -5px rgba(37, 99, 235, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    transition: all 0.3s ease;
+}
+
+.privacy-contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.privacy-contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 16px 32px -12px rgba(37, 99, 235, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.privacy-contact-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--p-text);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    position: relative;
+    z-index: 1;
+}
+
+.privacy-contact-title svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    padding: 4px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 6px;
+}
+
+.privacy-contact-info {
+    display: grid;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.privacy-contact-item {
+    font-size: 0.9rem;
+    color: var(--p-text);
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+    transition: all 0.2s ease;
+}
+
+.privacy-contact-item:last-child {
+    border-bottom: none;
+}
+
+.privacy-contact-item:hover {
+    transform: translateX(3px);
+    color: var(--color-primary);
+}
+
+.privacy-contact-item strong {
+    color: var(--color-primary);
+    font-weight: 600;
+    min-width: 100px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Scrollbars customizadas */
+.privacy-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.privacy-content::-webkit-scrollbar-track {
+    background: rgba(249, 250, 251, 0.5);
+    border-radius: 4px;
+}
+
+.privacy-content::-webkit-scrollbar-thumb {
+    background: rgba(209, 213, 219, 0.8);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.privacy-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.9);
+}
+
+/* Responsividade - Ajustada para header fixo */
+@media (max-width: 768px) {
+    .privacy-header {
+        padding: 0 1rem;
+        height: 70px;
+    }
+    
+    .privacy-back-btn span {
+        display: none;
+    }
+    
+    .privacy-back-btn {
+        padding: 0.5rem;
+        gap: 0;
+    }
+    
+    .privacy-page-title {
+        font-size: 1.125rem;
+    }
+    
+    .privacy-layout {
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 90px; /* Espaço para header mobile */
+        gap: 1rem;
+        min-height: calc(100vh - 70px);
+    }
+    
+    .privacy-sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 2rem;
+        max-height: none;
+        top: auto;
+    }
+    
+    .privacy-content {
+        padding: 0;
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    /* Header do conteúdo mobile */
+    .privacy-content > header {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+        border-radius: 16px;
+    }
+    
+    .privacy-main-title {
+        font-size: 2.25rem;
+        line-height: 1.2;
+    }
+    
+    .privacy-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .privacy-last-updated {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+    }
+    
+    /* Seções mobile */
+    .privacy-section {
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+        border-radius: 10px;
+    }
+    
+    .privacy-section-title {
+        font-size: 1.125rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.375rem;
+        margin-bottom: 0.875rem;
+    }
+    
+    .privacy-section-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+        padding: 2px;
+    }
+    
+    .privacy-section-badge {
+        margin-left: 0;
+        margin-top: 0;
+        font-size: 0.6rem;
+        padding: 2px 8px;
+    }
+    
+    .privacy-text {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+    
+    .privacy-list {
+        gap: 0.5rem;
+        margin: 0.875rem 0;
+    }
+    
+    .privacy-list-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.875rem 0.5rem 1.875rem;
+        line-height: 1.4;
+    }
+    
+    .privacy-list-item::before {
+        left: 0.625rem;
+        top: 0.8125rem;
+        width: 5px;
+        height: 5px;
+    }
+    
+    .privacy-list-item strong {
+        font-size: 0.85rem;
+        margin-bottom: 0.125rem;
+    }
+    
+    .privacy-section-content {
+        gap: 0.875rem;
+    }
+    
+    .privacy-intro {
+        padding: 0.875rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    
+    .privacy-divider {
+        margin: 0.875rem 0;
+    }
+    
+    .privacy-important {
+        padding: 0.75rem;
+        margin: 0.875rem 0;
+        border-radius: 6px;
+    }
+    
+    .privacy-important::before {
+        top: -4px;
+        left: 8px;
+        font-size: 0.7rem;
+    }
+    
+    /* Card de contato mobile */
+    .privacy-contact-card {
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1.25rem;
+    }
+    
+    .privacy-contact-title {
+        font-size: 1.0625rem;
+        margin-bottom: 0.875rem;
+    }
+    
+    .privacy-contact-title svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .privacy-contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        padding: 0.375rem 0;
+        font-size: 0.85rem;
+    }
+    
+    .privacy-contact-item strong {
+        min-width: auto;
+        font-size: 0.75rem;
+    }
+}

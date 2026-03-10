@@ -1,0 +1,427 @@
+/* ===== HEADER PRINCIPAL - LOGO E MENU ===== */
+/* 
+ * Este arquivo contém apenas os estilos do header principal
+ * Inclui: Logo, navegação, menu hambúrguer e responsividade
+ * Configurações de layout do body estão em global.css
+ */
+header {
+    background: #0c1c47; /* Mesma cor do footer */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.75rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px; /* Altura mínima consistente */
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efeito de scroll no header */
+header.scrolled {
+    background: #0c1c47; /* Mesma cor do header principal */
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 4px 6px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-bottom-color: rgba(37, 99, 235, 0.3);
+}
+
+/* ===== LOGO ===== */
+.logo {
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    width: 75px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover img {
+    filter: drop-shadow(0 4px 8px rgba(37, 99, 235, 0.3));
+}
+
+/* ===== NAVEGAÇÃO MINIMALISTA E TECNOLÓGICA ===== */
+nav {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Garante altura total do header */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+/* Botões de navegação minimalistas */
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 0; /* Minimalista sem bordas arredondadas */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible; /* Para permitir a linha inferior */
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* Altura mínima para alinhamento consistente */
+}
+
+/* Linha inferior que expande do centro */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #F59E0B;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+}
+
+/* Hover minimalista e elegante */
+nav ul li a:hover {
+    color: #F59E0B;
+}
+
+nav ul li a:hover::after {
+    width: 80%; /* Linha expande até 80% do link */
+}
+
+/* Link ativo (página atual) */
+nav ul li a.active {
+    color: var(--color-primary);
+}
+
+nav ul li a.active::after {
+    width: 80%;
+    opacity: 0.7; /* Opacidade de 70% conforme solicitado */
+}
+
+/* Botão CTA especial (se houver um botão de destaque) */
+nav ul li a.cta-button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* Mesma altura dos outros botões */
+}
+
+nav ul li a.cta-button::after {
+    display: none; /* Remove a linha inferior do botão CTA */
+}
+
+nav ul li a.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    color: var(--color-white);
+}
+
+/* ===== MENU HAMBÚRGUER MINIMALISTA ===== */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10001;
+    position: relative;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-menu:hover {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    margin: 0 auto;
+    background-color: var(--color-text);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger-menu.active span {
+    background-color: var(--color-primary);
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablet: menu hambúrguer */
+@media (max-width: 950px) {
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #0c1c47; /* Mesma cor do header e footer */
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        box-shadow: none;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        box-shadow: 4px 0 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .nav-menu ul li a {
+        position: relative;
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding: 1rem 2rem;
+        min-height: var(--touch-min);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: visible;
+    }
+
+    /* Linha inferior que expande do centro - mobile */
+    .nav-menu ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--color-primary);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+    }
+
+    /* Hover minimalista mobile */
+    .nav-menu ul li a:hover {
+        color: var(--color-primary);
+        background: rgba(37, 99, 235, 0.1);
+        border-color: rgba(37, 99, 235, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .nav-menu ul li a:hover::after {
+        width: 80%; /* Linha expande até 80% do link */
+    }
+
+    /* Link ativo no menu mobile */
+    .nav-menu ul li a.active {
+        color: var(--color-primary);
+        background: rgba(37, 99, 235, 0.15);
+        border-color: rgba(37, 99, 235, 0.4);
+        font-weight: 600;
+    }
+
+    .nav-menu ul li a.active::after {
+        width: 80%;
+        opacity: 0.7; /* Opacidade de 70% conforme solicitado */
+    }
+
+    /* Botão CTA especial no mobile */
+    .nav-menu ul li a.cta-button {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border-radius: 8px;
+        border-color: var(--color-primary);
+        font-weight: 600;
+    }
+
+    .nav-menu ul li a.cta-button::after {
+        display: none; /* Remove a linha inferior do botão CTA */
+    }
+
+    .nav-menu ul li a.cta-button:hover {
+        background: var(--color-primary);
+        color: var(--color-white);
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+        border-color: var(--color-primary);
+    }
+
+    header {
+        padding: 1rem 1rem;
+    }
+
+    .logo img {
+        width: 82px;
+    }
+}
+
+/* Desktop: menu horizontal */
+@media (min-width: 951px) {
+    .hamburger-menu {
+        display: none !important;
+    }
+
+    .nav-menu {
+        position: relative;
+        background: transparent;
+        width: auto;
+        height: auto;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        width: 85px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem;
+        min-height: 80px; /* Altura maior para desktop */
+    }
+    
+    .logo img {
+        width: 90px;
+    }
+    
+    nav ul {
+        gap: 0.75rem; /* Mais espaço entre botões */
+    }
+    
+    nav ul li a {
+        font-size: 1.05rem; /* Aumentado de 1rem para 1.05rem */
+        padding: 0.875rem 1.25rem; /* Padding ligeiramente maior */
+        min-height: 48px; /* Altura maior para desktop */
+    }
+    
+    nav ul li a.cta-button {
+        font-size: 1.05rem; /* Mesmo tamanho dos outros botões */
+        padding: 0.875rem 1.5rem;
+        min-height: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header {
+        padding: 1.25rem 2rem;
+        min-height: 90px; /* Altura ainda maior para telas grandes */
+    }
+    
+    .logo img {
+        width: 95px;
+    }
+    
+    nav ul {
+        gap: 1rem; /* Ainda mais espaço em telas grandes */
+    }
+    
+    nav ul li a {
+        font-size: 1.125rem; /* Aumentado para telas grandes */
+        padding: 1rem 1.5rem; /* Botões maiores */
+        min-height: 52px; /* Altura maior */
+    }
+    
+    nav ul li a.cta-button {
+        font-size: 1.125rem; /* Mesmo tamanho dos outros botões */
+        padding: 1rem 1.75rem; /* Padding maior para o CTA */
+        min-height: 52px;
+    }
+}
+
+@media (min-width: 1400px) {
+    header {
+        min-height: 95px; /* Altura máxima para telas extra grandes */
+    }
+    
+    nav ul {
+        gap: 1.25rem; /* Mais espaço em telas muito grandes */
+    }
+    
+    nav ul li a {
+        font-size: 1.1875rem; /* Font-size ainda maior para telas extra grandes */
+        padding: 1.125rem 1.75rem;
+        min-height: 56px; /* Altura máxima */
+    }
+    
+    nav ul li a.cta-button {
+        font-size: 1.1875rem;
+        padding: 1.125rem 2rem;
+        min-height: 56px;
+    }
+}

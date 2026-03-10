@@ -1,0 +1,94 @@
+/* CORREÇÃO EMERGENCIAL PARA FOOTER EM MOBILE */
+
+/* Garantir que o footer seja sempre visível */
+footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    background: #0c1c47 !important;
+    color: white !important;
+    padding: 20px 15px !important;
+    margin: 20px 0 0 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+    clear: both !important;
+    min-height: 60px !important;
+}
+
+/* Layout do footer */
+footer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+footer .footer-left,
+footer .footer-right {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+footer .footer-left {
+    border-right: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+footer .footer-left p,
+footer .footer-right a {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+footer .footer-right a:hover {
+    text-decoration: underline !important;
+    opacity: 0.8 !important;
+}
+
+/* Mobile específico */
+@media (max-width: 767px) {
+    footer {
+        grid-template-columns: 1fr !important;
+        padding: 15px 10px !important;
+        text-align: center !important;
+    }
+    
+    footer .footer-left {
+        border-right: none !important;
+        margin-bottom: 10px !important;
+    }
+    
+    footer .footer-left p,
+    footer .footer-right a {
+        font-size: 13px !important;
+    }
+}
+
+/* Garantir que o body permita scroll completo */
+body {
+    overflow-y: auto !important;
+    min-height: 100vh !important;
+}
+
+/* Garantir que a última seção não cubra o footer */
+#contato {
+    margin-bottom: 0 !important;
+    padding-bottom: 2rem !important;
+}
+
+/* Forçar que o footer apareça após todo o conteúdo */
+footer {
+    order: 999 !important;
+}
